@@ -12,29 +12,23 @@ import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 
 function Login(props) {
   const [loginPassword, setLogin] = useState("password");
+  const [signUpPassword, setSignUp] = useState("password");
   const checkLogin = () => {
     var token = localStorage.getItem("authToken");
     if (token == null) {
-      localStorage.removeItem("userType");
       localStorage.removeItem("userId");
     } else {
       var id = localStorage.getItem("userId");
       if (id == null) {
         localStorage.removeItem("authToken");
-        localStorage.removeItem("userType");
       }
       const details = jwt_decode(localStorage.getItem("authToken"));
       var exp = details.exp * 1000;
       if (new Date(exp) < new Date() || details.id != id) {
         localStorage.removeItem("userId");
-        localStorage.removeItem("userType");
         localStorage.removeItem("authToken");
       } else {
-        if(localStorage.getItem("userType") == 'Admin'){
-          (window.location.href = "/dashboard")
-        }else{
-          (window.location.href = "/userDashboard")
-        }
+          window.location.href = "/userDashboard";
       }
     }
   };
@@ -51,9 +45,7 @@ function Login(props) {
     <div>
       {/* <Navbar /> */}
       <div className={`row ${styles.login} align-items-center`}>
-        <div className="col-lg-6">
-          {/* <img src={img} alt="" /> */}
-        </div>
+        <div className="col-lg-6">{/* <img src={img} alt="" /> */}</div>
         <div className="col-lg-6">
           <div
             id="carouselExampleControls"
@@ -73,25 +65,26 @@ function Login(props) {
                   // validationSchema={LoginSchema}
                   onSubmit={async (values) => {
                     await axios
-                      .post("https://repairnetsrm.herokuapp.com/api/auth/login", values)
+                      .post(
+                        "https://repairnetsrm.herokuapp.com/api/auth/login",
+                        values
+                      )
                       .then((data) => {
                         if (data.status == 200) {
                           localStorage.setItem("authToken", data.data.token);
                           localStorage.setItem("userId", data.data.id);
-                          localStorage.setItem("userType", data.data.role);
                           Toast.fire({
                             title: "Login Successfull",
                             icon: "success",
                             timer: 1500,
                             timerProgressBar: true,
-                            didClose: () =>{
-                              if(data.data.role == 'Admin'){
-                                (window.location.href = "/dashboard")
-                              }else{
-                                (window.location.href = "/userDashboard")
+                            didClose: () => {
+                              if (data.data.role == "Admin") {
+                                window.location.href = "/dashboard";
+                              } else {
+                                window.location.href = "/userDashboard";
                               }
-                            }
-                              ,
+                            },
                           });
                         }
                       })
@@ -108,7 +101,6 @@ function Login(props) {
                           });
                           localStorage.removeItem("authToken");
                           localStorage.removeItem("userId");
-                          localStorage.removeItem("userType");
                         }
                       });
                     console.log(values);
@@ -145,9 +137,9 @@ function Login(props) {
                               }
                             >
                               {loginPassword == "password" ? (
-                                <AiFillEye size={28}/>
+                                <AiFillEye size={28} />
                               ) : (
-                                <AiFillEyeInvisible  size={28}/>
+                                <AiFillEyeInvisible size={28} />
                               )}
                             </span>
                           </div>
@@ -185,7 +177,10 @@ function Login(props) {
                   // validationSchema={SignUpSchema}
                   onSubmit={async (values) => {
                     await axios
-                      .post("https://repairnetsrm.herokuapp.com/api/auth/register", values)
+                      .post(
+                        "https://repairnetsrm.herokuapp.com/api/auth/register",
+                        values
+                      )
                       .then((data) => {
                         Toast.fire({
                           title: "User Successfully Registered",
@@ -217,11 +212,31 @@ function Login(props) {
                           <ErrorMessage name="email"></ErrorMessage>
                         </span>
                         <label htmlFor="password">Password</label>
-                        <Field
-                          type="password"
-                          name="password"
-                          placeholder="Enter your password"
-                        />
+                        <div className={`row ${styles.passwordField}`}>
+                          <div className="col-11">
+                            <Field
+                              type={signUpPassword}
+                              name="password"
+                              placeholder="Enter your password"
+                            />
+                          </div>
+                          <div className="col-1">
+                            <span
+                              type="button"
+                              onClick={() =>
+                                signUpPassword == "password"
+                                  ? setSignUp("text")
+                                  : setSignUp("password")
+                              }
+                            >
+                              {signUpPassword == "password" ? (
+                                <AiFillEye size={28} />
+                              ) : (
+                                <AiFillEyeInvisible size={28} />
+                              )}
+                            </span>
+                          </div>
+                        </div>
                         <span className="error">
                           <ErrorMessage name="password"></ErrorMessage>
                         </span>
