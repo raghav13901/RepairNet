@@ -6,8 +6,8 @@
     font-family: "Poppins";
   }
   .login img {
-    width: 100%;
-    max-height: 100vh;
+    width: 60%;
+    max-height: 80vh;
   }
   .login > div:last-child {
     text-align: left;
@@ -19,7 +19,7 @@
     width: 100%;
   }
   .login .passwordField svg:hover{
-    fill: #396f4d;
+    fill: #382acb;
   }
   .login input {
     border: none;
@@ -28,7 +28,7 @@
     width: 70%;
     margin: 0.5% 0;
     padding: 1% 0.5%;
-    caret-color: #396f4d;
+    caret-color: #382acb;
     color: #5f6368;
   }
   .login input:active,
@@ -37,8 +37,8 @@
   .login input:focus-visible::placeholder {
     outline: none;
     border-width: 3px;
-    color: #396f4d;
-    border-color: #396f4d;
+    color: #382acb;
+    border-color: #382acb;
     font-weight: 500;
   }
   .login form {
@@ -50,7 +50,7 @@
   }
   .login form button {
     display: block;
-    background-color: #396f4d;
+    background-color: #382acb;
     width: 70%;
     padding: 2%;
     border: none;
@@ -66,22 +66,22 @@
     text-align: right;
     margin-top: 1%;
     text-decoration: none;
-    color: #396f4d;
+    color: #382acb;
     font-weight: 600;
   }
   .login .carBtn{
       color: #000;
       border: none;
       background-color: transparent;
-      color: #396f4d;
+      color: #382acb;
       font-weight: 600;
   }
   .login .cItem{
       height: 90vh;
-      padding: 5%;
+      padding: 10% 5% 5%;
   }
   .cItem:first-child{
-      padding-top: 15%;
+      padding-top: 18%;
   }
   .login form > span{
     width: 70%;

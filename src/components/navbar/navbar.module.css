@@ -1,0 +1,10 @@
+.navbar{
+    font-family: 'Poppins';
+    padding: 0.5%;
+}
+.navbar > div > a{
+    font-weight: 600;
+}
+.navbar a{
+    font-weight: 500;
+}

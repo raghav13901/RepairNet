@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";
-// import img from "../../assets/fabian-quintero-UWQP2mh5YJI-unsplash.png";
+import img from "../../assets/undraw_mobile_login_re_9ntv.svg";
 import styles from "./login.module.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 // import LoginSchema from "../../utils/loginSchema";
 import axios from "axios";
 // import SignUpSchema from "../../utils/signUpSchema";
 import Swal from "sweetalert2";
-// import Navbar from "../navbar/navbar";
+import Navbar from "../navbar/navbar";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 
 function Login(props) {
@@ -43,9 +43,9 @@ function Login(props) {
   });
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
       <div className={`row ${styles.login} align-items-center`}>
-        <div className="col-lg-6">{/* <img src={img} alt="" /> */}</div>
+        <div className="col-lg-6"><img src={img} alt="" /></div>
         <div className="col-lg-6">
           <div
             id="carouselExampleControls"
