@@ -1,0 +1,67 @@
+.navbar{
+    font-family: 'Poppins';
+    padding: 0.5%;
+}
+.navbar > div > a{
+    font-weight: 600;
+}
+.navbar a{
+    font-weight: 500;
+}
+
+.display_input_image{
+    width: 575px;
+    height: 411px;
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover;
+    margin-top: 20px;
+}
+
+.input{
+    float: left;
+    margin-left: 80px;
+    margin-top: 150px;
+}
+
+.display_output_image{
+    width: 575px;
+    height: 411px;
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover;
+    margin-top: 20px;
+}
+
+.output{
+    float: right;
+    margin-right: 80px;
+    margin-top: 180px;
+}
+
+.middle{
+    position: absolute;
+    margin-top: 300px;
+    margin-left: 810px;
+}
+
+.in{
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 320px;
+    font-weight: 600;
+    font-family: 'Poppins';
+    color: #3A80FD;
+}
+.out{
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 1250px;
+    font-weight: 600;
+    font-family: 'Poppins';
+    color: #3A80FD;
+}
+
+.in_btn{
+    margin-left: 100px;
+}

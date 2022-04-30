@@ -1,0 +1,70 @@
+.navbar{
+    font-family: 'Poppins';
+    padding: 0.5%;
+}
+.navbar > div > a{
+    font-weight: 600;
+}
+.navbar a{
+    font-weight: 500;
+}
+
+.Container{
+    position: absolute;
+    margin-top: 75px;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.Element1{
+    margin-bottom: 20px;
+    height: 300px;
+    width: 100%;
+}
+
+.Element2{
+    margin-bottom: 20px;
+    height: 300px;
+    width: 100%;
+}
+
+.img1{
+    float: right;
+    margin-right: 20px;
+}
+
+.img2{
+    float: left;
+    margin-left: 20px;
+}
+
+.in{
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 710px;
+    font-weight: 600;
+    font-family: 'Poppins';
+    color: #3A80FD;
+}
+
+.para1{
+    position: absolute;
+    margin-top: 70px;
+    margin-left: 20px;
+    height: 200px;
+    width: 1000px;
+    font-family: 'Poppins';
+    font-size: 20px;
+    text-align: justify;
+}
+
+.para2{
+    position: absolute;
+    margin-top: 70px;
+    margin-left: 680px;
+    height: 200px;
+    width: 1000px;
+    font-family: 'Poppins';
+    font-size: 20px;
+    text-align: justify;
+}

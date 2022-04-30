@@ -1,0 +1,40 @@
+.navbar{
+    font-family: 'Poppins';
+    padding: 0.5%;
+}
+.navbar > div > a{
+    font-weight: 600;
+}
+.navbar a{
+    font-weight: 500;
+}
+.in{
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 20px;
+    font-weight: 600;
+    font-family: 'Poppins';
+    color: #3A80FD;
+}
+
+.divel{
+    position: absolute;
+    margin-top: 110px;
+    margin-left: 0px;
+}
+
+.element{
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: black;
+    width:420px;
+    margin-left: 20px;
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+.img1{
+    position: absolute;
+    margin-left: 500px;
+    margin-top: 160px;
+}
